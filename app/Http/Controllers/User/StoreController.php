@@ -11,7 +11,7 @@ use App\Models\User;
 class StoreController extends Controller
 {
     public function __invoke(StoreRequest $request) {
-        $data = $request->validated();
+        $data = $request->validate();
 
         User::firstOrCreate([
             'email' => $data['email']

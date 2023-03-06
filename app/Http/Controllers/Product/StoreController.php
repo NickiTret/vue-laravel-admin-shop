@@ -16,8 +16,9 @@ class StoreController extends Controller
 {
     public function __invoke(StoreRequest $request)
     {
-        $data = $request->validated();
-        $data['preview_image'] = Storage::disk('public')->put('/images', $data['preview_image']);
+        $data = $request->validate();
+        // $data['preview_image'] = Storage::disk('public')->put('/images', $data['preview_image']);
+        $data['preview_image'] = Product::uploadImage($request);
         $tagsIds = $data['tags'];
         $colorsIds = $data['colors'];
         unset($data['tags'], $data['colors']);
@@ -39,6 +40,8 @@ class StoreController extends Controller
                 'color_id' => $colorId,
             ]);
         }
+
+        
 
         return redirect()->route('product.index');
     }

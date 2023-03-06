@@ -10,7 +10,8 @@ use App\Models\Category;
 class UpdateController extends Controller
 {
     public function __invoke(UpdateRequest $request, Category $category) {
-        $data = $request->validated();
+        $data = $request->validate();
+        dd($data);
         $category->update($data);
 
         return view('category.show', compact('category'));

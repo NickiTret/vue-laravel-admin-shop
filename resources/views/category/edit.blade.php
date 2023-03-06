@@ -25,7 +25,7 @@
               <div class="row">
                 <form action="{{ route('category.update', $category->id) }}">
                     @csrf
-                    @method('patch')
+                    @method('PATCH')
                     <div class="form-group">
                         <input type="text" class="form-control" placeholder="Наименование" value="{{ $category->title }}" name="title" id="title">
                     </div>

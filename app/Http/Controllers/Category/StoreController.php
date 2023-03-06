@@ -11,7 +11,7 @@ use App\Models\Category;
 class StoreController extends Controller
 {
     public function __invoke(StoreRequest $request) {
-        $data = $request->validated();
+        $data = $request->validate();
         Category::firstOrCreate($data);
 
         return redirect()->route('category.index');
