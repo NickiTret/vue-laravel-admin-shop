@@ -26,7 +26,7 @@ class Product extends Model
             }
             $folder = date('Y-m-d');
 
-            return $request->file('preview_image')->store("images/{$folder}");
+            return $request->file('preview_image')->store("images/{$folder}, 'public'");
         }
 
         return null;

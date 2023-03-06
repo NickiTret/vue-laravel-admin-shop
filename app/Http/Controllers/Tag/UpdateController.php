@@ -10,7 +10,7 @@ use App\Models\Tag;
 class UpdateController extends Controller
 {
     public function __invoke(UpdateRequest $request, Tag $tag) {
-        $data = $request->validate();
+        $data = $request->validated();
         $tag->update($data);
 
         return view('tag.show', compact('tag'));

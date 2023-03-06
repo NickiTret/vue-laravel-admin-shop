@@ -10,7 +10,7 @@ use App\Models\Color;
 class UpdateController extends Controller
 {
     public function __invoke(UpdateRequest $request, Color $color) {
-        $data = $request->validate();
+        $data = $request->validated();
         $color->update($data);
 
         return view('color.show', compact('color'));

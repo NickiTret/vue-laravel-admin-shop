@@ -15,7 +15,7 @@ use App\Models\ProductTag;
 class UpdateController extends Controller
 {
     public function __invoke(UpdateRequest $request, Product $product) {
-        $data = $request->validate();
+        $data = $request->validated();
 
         $data['preview_image'] = Product::uploadImage($request);
 

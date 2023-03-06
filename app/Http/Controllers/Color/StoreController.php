@@ -11,7 +11,9 @@ use App\Models\Color;
 class StoreController extends Controller
 {
     public function __invoke(StoreRequest $request) {
-        $data = $request->validate();
+        $data = $request->validate([
+            'title' => 'required|string'
+        ]);
         Color::firstOrCreate($data);
 
         return redirect()->route('color.index');
