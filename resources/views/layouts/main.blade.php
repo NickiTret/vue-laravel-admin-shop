@@ -205,6 +205,7 @@
 
         <!-- Content Wrapper. Contains page content -->
         <div class="content-wrapper">
+            @include('Component.errors')
             @yield('content')
         </div>
         <!-- /.content-wrapper -->

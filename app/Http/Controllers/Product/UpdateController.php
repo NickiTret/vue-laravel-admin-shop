@@ -19,23 +19,22 @@ class UpdateController extends Controller
 
         $data['preview_image'] = Product::uploadImage($request);
 
+        $data['tags'] = ProductTag::where('product_id', $product->id);
+        $data['colors'] = ColorProduct::where('product_id', $product->id);
+
         $tagsIds = $data['tags'];
         $colorsIds = $data['colors'];
         unset($data['tags'], $data['colors']);
 
-        $product = Product::firstOrCreate([
-            'title' => $data['title']
-        ], $data);
-
         foreach ($tagsIds as $tagId) {
-            ProductTag::firstOrCreate([
+            ProductTag::update([
                 'product_id' => $product->id,
                 'tag_id' => $tagId,
             ]);
         }
 
         foreach ($colorsIds as $colorId) {
-            ColorProduct::firstOrCreate([
+            ColorProduct::update([
                 'product_id' => $product->id,
                 'color_id' => $colorId,
             ]);
@@ -43,6 +42,6 @@ class UpdateController extends Controller
 
         $product->update($data);
 
-        return view('product.show', compact('product'));
+        return view('product.show', compact('product'))->with('success', 'Изменения сохранены');
     }
 }
