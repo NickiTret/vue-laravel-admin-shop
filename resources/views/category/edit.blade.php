@@ -23,7 +23,7 @@
             <div class="container-fluid">
               <!-- Small boxes (Stat box) -->
               <div class="row">
-                <form action="{{ route('category.update', $category->id) }}">
+                <form action="{{ route('category.update', $category->id) }}" method="post">
                     @csrf
                     @method('PATCH')
                     <div class="form-group">

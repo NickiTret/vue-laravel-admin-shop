@@ -10,10 +10,7 @@ class UpdateController extends Controller
 {
     public function __invoke(UpdateRequest $request, Category $category) {
 
-        $data = $request->validate([
-            'title' => 'string|required'
-        ]);
-
+        $data = $request->validated();
         $category->update($data);
 
         return view('category.show', compact('category'));
