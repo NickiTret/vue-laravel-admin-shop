@@ -172,6 +172,17 @@
                                 </p>
                             </a>
                         </li>
+
+                        <li class="nav-item">
+                            <a href="{{ route('group.index') }}" class="nav-link">
+                                <i class="nav-icon fas fa-users"></i>
+                                <p>
+                                    Группы
+                                </p>
+                            </a>
+                        </li>
+
+
                         <li class="nav-item">
                             <a href="{{ route('tag.index') }}" class="nav-link">
                                 <i class="nav-icon fas fa-hashtag"></i>

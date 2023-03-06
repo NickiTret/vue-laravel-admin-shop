@@ -26,7 +26,7 @@ class Product extends Model
             }
             $folder = date('Y-m-d');
 
-            return $request->file('preview_image')->store("images/{$folder}, 'public'");
+            return $request->file('preview_image')->store("images/{$folder}", 'public');
         }
 
         return null;
@@ -34,7 +34,7 @@ class Product extends Model
 
     public function getImage()
     {
-        if(!$this->preview_image) 
+        if(!$this->preview_image)
         {
             return asset("assets/admin/image/no_photo.png");
         }
@@ -42,7 +42,16 @@ class Product extends Model
         return asset($this->preview_image);
     }
 
-    // public function category() {
-    //     return $this->belongsTo(Category::class, 'category_id', 'id');
-    // }
+    public function category() {
+        return $this->belongsTo(Category::class, 'category_id', 'id');
+    }
+
+    //getter for stoage buplic link IMAGE
+
+    public function getImageUrlAttribute() {
+        //вызов гетера imageUrl()
+        // return url( 'storage/' . $this->preview_image);
+        return $this->getImage();
+
+    }
 }

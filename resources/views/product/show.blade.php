@@ -45,7 +45,7 @@
                                     <tr>
                                         <td>Изображение</td>
                                         <td>
-                                            <img src="{{ asset( 'storage/app/public/' . $product->preview_image) }}" alt="{{ $product->title }}">
+                                            <img width="200" src="{{ $product->getImage() }}" alt="{{ $product->title }}">
                                         </td>
                                     </tr>
                                     <tr>
