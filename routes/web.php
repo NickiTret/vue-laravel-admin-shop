@@ -15,6 +15,26 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', App\Http\Controllers\Main\IndexController::class)->name('main.index');
 
+Route::group(['prefix' => 'pages'], function() {
+    Route::get('/', App\Http\Controllers\Page\IndexController::class)->name('page.index');
+    Route::get('/create', App\Http\Controllers\Page\CreateController::class)->name('page.create');
+    Route::post('/', App\Http\Controllers\Page\StoreController::class)->name('page.store');
+    Route::get('/{page}/edit', App\Http\Controllers\Page\EditController::class)->name('page.edit');
+    Route::get('/{page}', App\Http\Controllers\Page\ShowController::class)->name('page.show');
+    Route::patch('/{page}', App\Http\Controllers\Page\UpdateController::class)->name('page.update');
+    Route::delete('/{page}', App\Http\Controllers\Page\DeleteController::class)->name('page.delete');
+});
+
+
+Route::group(['prefix' => 'projects'], function() {
+    Route::get('/', App\Http\Controllers\Project\IndexController::class)->name('project.index');
+    Route::get('/create', App\Http\Controllers\Project\CreateController::class)->name('project.create');
+    Route::post('/', App\Http\Controllers\Project\StoreController::class)->name('project.store');
+    Route::get('/{project}/edit', App\Http\Controllers\Project\EditController::class)->name('project.edit');
+    Route::get('/{project}', App\Http\Controllers\Project\ShowController::class)->name('project.show');
+    Route::patch('/{project}', App\Http\Controllers\Project\UpdateController::class)->name('project.update');
+    Route::delete('/{project}', App\Http\Controllers\Project\DeleteController::class)->name('project.delete');
+});
 
 Route::group(['prefix' => 'categories'], function() {
     Route::get('/', App\Http\Controllers\Category\IndexController::class)->name('category.index');
@@ -25,6 +45,8 @@ Route::group(['prefix' => 'categories'], function() {
     Route::patch('/{category}', App\Http\Controllers\Category\UpdateController::class)->name('category.update');
     Route::delete('/{category}', App\Http\Controllers\Category\DeleteController::class)->name('category.delete');
 });
+
+
 
 Route::group(['prefix' => 'colors'], function() {
     Route::get('/', App\Http\Controllers\Color\IndexController::class)->name('color.index');

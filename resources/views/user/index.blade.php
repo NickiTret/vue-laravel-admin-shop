@@ -55,7 +55,10 @@
                                                 <th>{{ $user->email }}</th>
                                                 <th>{{ $user->address }}</th>
                                                 <th>{{ $user->age }}</th>
+                                                @if (!empty($user->gender))
                                                 <th>{{ $user->genderTitle }}</th>
+                                                @endif
+
 
                                         </tr>
                                     @endforeach

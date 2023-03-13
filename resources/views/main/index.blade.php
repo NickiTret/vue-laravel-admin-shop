@@ -17,7 +17,7 @@
             </div><!-- /.container-fluid -->
           </div>
           <!-- /.content-header -->
-      
+
           <!-- Main content -->
           <section class="content">
             <div class="container-fluid">
@@ -28,7 +28,7 @@
                   <div class="small-box bg-info">
                     <div class="inner">
                       <h3>150</h3>
-      
+
                       <p>Заказы</p>
                     </div>
                     <div class="icon">
@@ -43,7 +43,6 @@
                   <div class="small-box bg-success">
                     <div class="inner">
                       <h3>53<sup style="font-size: 20px">%</sup></h3>
-      
                       <p>Продукты</p>
                     </div>
                     <div class="icon">
@@ -58,7 +57,6 @@
                   <div class="small-box bg-warning">
                     <div class="inner">
                       <h3>44</h3>
-      
                       <p>Пользователи</p>
                     </div>
                     <div class="icon">
@@ -73,7 +71,7 @@
                   <div class="small-box bg-danger">
                     <div class="inner">
                       <h3>65</h3>
-      
+
                       <p>Отзывы</p>
                     </div>
                     <div class="icon">

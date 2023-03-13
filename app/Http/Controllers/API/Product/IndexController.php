@@ -13,7 +13,6 @@ class IndexController extends Controller
 {
     public function __invoke() {
         $products = Product::all();
-
         return ProductResource::collection($products);
     }
 }

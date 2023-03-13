@@ -62,10 +62,13 @@
                                         <td>Возраст</td>
                                         <td>{{  $user->age }}</td>
                                     </tr>
+                                    @if (!empty($user->gender))
                                     <tr>
                                         <td>Пол</td>
                                         <th>{{ $user->genderTitle }}</th>
                                     </tr>
+                                    @endif
+
                                 </tbody>
                             </table>
                         </div>
