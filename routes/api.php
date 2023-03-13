@@ -21,5 +21,6 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 Route::get('/products', App\Http\Controllers\API\Product\IndexController::class);
 
 Route::get('/projects', App\Http\Controllers\API\Project\IndexController::class);
+Route::get('/projects/{project}', App\Http\Controllers\API\Project\IndexController::class);
 
 Route::get('/pages', App\Http\Controllers\API\Page\IndexController::class);
